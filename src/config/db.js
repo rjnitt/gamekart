@@ -6,11 +6,11 @@ const fs = require('fs');
 
 // Create a single database connection
 const connection = mysql.createConnection({
-  host: 'gamekart-mysql-rjnitt-2216.l.aivencloud.com',
-  user: 'avnadmin',
-  password: 'AVNS_jHUhlicu4vJ5LozEre9',
-  database: 'gamekart_db',
-  port: 17088,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.PORT,
   ssl: {
     ca: fs.readFileSync(__dirname + '/ca.pem')  // Load SSL certificate
   },
